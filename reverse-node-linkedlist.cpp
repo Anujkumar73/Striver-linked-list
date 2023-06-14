@@ -11,3 +11,15 @@ public:
         return newHead;
     }
 };
+
+ListNode* reverseList(ListNode* head){
+    ListNode *p=NULL,*c=head,*n=head->next;
+    while(c!=NULL){
+        c->next=p;
+        p=c;
+        c=n;
+        if(n!=NULL)n=n->next;
+    }
+    return p;
+}
+
